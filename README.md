@@ -1,1 +1,1 @@
-@todo – make a website
+@todo – make a website, pick a framework.
