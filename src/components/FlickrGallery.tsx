@@ -94,18 +94,21 @@ export default function FlickrGallery() {
     <div>
       {photos ? (
         <div>
+          {/* Loop over the photos and render the photo/title/description */}
           {photos.map((photo, i) => (
-            <div key={i} className="mb-8">
-              <Image
-                className="aspect-1/1 object-cover"
-                key={i}
-                src={photo.url}
-                alt={photo.title}
-                width={1000}
-                height={1000}
-              />
-              <h3>{photo.title}</h3>
-              <p>{photo.description}</p>
+            <div key={i} className="flex justify-center">
+              <div className="w-75% mx-auto">
+                <Image
+                  className="aspect-1/1 object-cover"
+                  key={i}
+                  src={photo.url}
+                  alt={photo.title}
+                  width={1000}
+                  height={1000}
+                />
+                <h3>{photo.title}</h3>
+                <p>{photo.description}</p>
+              </div>
             </div>
           ))}
         </div>
