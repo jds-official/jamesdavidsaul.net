@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { H3 } from '@/components/Headings';
 
 // Define the interface we're going to use to store API data.
 interface FlickrPhoto {
@@ -12,7 +13,7 @@ interface FlickrPhoto {
 }
 
 export default function FlickrGallery() {
-  const [photos, setPhotos] = useState<string | null>(null);
+  const [photos, setPhotos] = useState<FlickrPhoto[]>([]);
 
   useEffect(() => {
     const fetchPhoto = async () => {
@@ -97,16 +98,16 @@ export default function FlickrGallery() {
           {/* Loop over the photos and render the photo/title/description */}
           {photos.map((photo, i) => (
             <div key={i} className="flex justify-center">
-              <div className="w-75% mx-auto">
+              <div className="w-3/4 mx-auto">
                 <Image
                   className="aspect-1/1 object-cover"
                   key={i}
                   src={photo.url}
                   alt={photo.title}
-                  width={1000}
-                  height={1000}
+                  width={1920}
+                  height={1920}
                 />
-                <h3>{photo.title}</h3>
+                <H3>{photo.title}</H3>
                 <p>{photo.description}</p>
               </div>
             </div>
