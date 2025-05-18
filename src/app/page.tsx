@@ -1,6 +1,6 @@
 'use client';
 // import { useState } from 'react';
-import FlickrGrid from '@/components/FlickrGrid';
+import FlickrGallery from '@/components/FlickrGallery';
 
 export default function Home() {
   // const [query, setQuery] = useState('');
@@ -18,8 +18,7 @@ export default function Home() {
   return (
     <main className="p-8">
       <h1 className="text-3xl font-bold mb-4">James David Saul</h1>
-      {/* <FlickrGrid photos={photos} /> */}
-      <FlickrGrid />
+      <FlickrGallery />
     </main>
   );
 }
