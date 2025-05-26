@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { H3 } from '@/components/Headings';
 
 // Define the interface we're going to use to store API data.
@@ -81,7 +82,6 @@ export default function FlickrGallery() {
             };
           }),
         );
-        console.log('results', results);
         setPhotos(results);
       } catch (error) {
         console.error('Error fetching flickr photo', error);
@@ -97,7 +97,7 @@ export default function FlickrGallery() {
         <div>
           {/* Loop over the photos and render the photo/title/description */}
           {photos.map((photo, i) => (
-            <div key={i} className="flex justify-center">
+            <div data-scroll-section key={i} className="flex justify-center">
               <div className="w-3/4 mx-auto">
                 <Image
                   className="aspect-1/1 object-cover"
