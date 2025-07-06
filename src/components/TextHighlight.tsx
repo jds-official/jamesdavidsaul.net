@@ -12,10 +12,10 @@ export default function TextHighlight() {
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
-    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] p-10 flex flex-col justify-center items-center font-sans relative">
-      <div className="relative overflow-hidden transition-all -top-5">
+    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative">
+      <div className="relative overflow-hidden transition-all">
         <Image
-          className="animate-revealUp translate-y-full"
+          className="animate-revealUp translate-y-full w-[200px] h-[300px]"
           style={{ animationDelay: '2.5s' }}
           src="/images/jds.webp"
           alt="Selfie of James David Saul"
@@ -23,7 +23,7 @@ export default function TextHighlight() {
           height={300}
         />
       </div>
-      <h2 className="text-4xl font-bold whitespace-nowrap">
+      <h2 className="text-4xl font-bold whitespace-nowrap mt-4">
         {headline.split('').map((char, i) => (
           <span
             key={i}

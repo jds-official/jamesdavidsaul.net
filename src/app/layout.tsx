@@ -5,12 +5,14 @@ import './globals.css';
 const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
+  display: 'swap',
 });
 
 const badScript = Bad_Script({
   variable: '--font-bad-script',
   subsets: ['latin'],
   weight: '400', // Bad Script only supports 400
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

@@ -100,11 +100,11 @@ export default function FlickrGallery() {
         <div className="relative">
           {photos.map((photo, i) => (
             <div key={i}>
-              <div className="mx-auto flex flex-col md:flex-row">
+              <div className="mx-auto flex flex-col lg:flex-row">
                 {i % 2 === 0 ? (
                   <>
                     {/* Image first */}
-                    <div className="md:w-1/2">
+                    <div className="lg:w-1/2">
                       <Image
                         className="aspect-square object-cover"
                         src={photo.url}
@@ -114,20 +114,20 @@ export default function FlickrGallery() {
                       />
                     </div>
                     {/* Text second */}
-                    <div className="md:w-1/2 bg-violet-50 flex justify-center items-center flex-col">
+                    <div className="lg:w-1/2 bg-violet-50 flex justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>
                   </>
                 ) : (
                   <>
-                    {/* Text first */}
-                    <div className="md:w-1/2 bg-emerald-100 flex justify-center items-center flex-col">
+                    {/* Text first desktop */}
+                    <div className="hidden lg:flex lg:w-1/2 bg-emerald-100 justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>
                     {/* Image second */}
-                    <div className="md:w-1/2">
+                    <div className="lg:w-1/2">
                       <Image
                         className="aspect-square object-cover"
                         src={photo.url}
@@ -135,6 +135,11 @@ export default function FlickrGallery() {
                         width={1920}
                         height={1920}
                       />
+                    </div>
+                    {/* Text second mobile only */}
+                    <div className="flex lg:hidden lg:w-1/2 bg-emerald-100 justify-center items-center flex-col">
+                      <H3>{photo.title}</H3>
+                      <p>{photo.description}</p>
                     </div>
                   </>
                 )}
