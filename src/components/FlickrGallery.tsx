@@ -12,6 +12,15 @@ interface FlickrPhoto {
   description: string;
 }
 
+interface FlickrSize {
+  label: string;
+  width: string;
+  height: string;
+  source: string;
+  url: string;
+  media: string;
+}
+
 export default function FlickrGallery() {
   const [photos, setPhotos] = useState<FlickrPhoto[]>([]);
 
@@ -88,9 +97,9 @@ export default function FlickrGallery() {
   return (
     <div>
       {photos.length > 0 ? (
-        <div>
+        <div className="relative">
           {photos.map((photo, i) => (
-            <div className="sticky top-0 min-h-screen" key={i}>
+            <div key={i}>
               <div className="mx-auto flex flex-col md:flex-row">
                 {i % 2 === 0 ? (
                   <>
@@ -105,7 +114,7 @@ export default function FlickrGallery() {
                       />
                     </div>
                     {/* Text second */}
-                    <div className="md:w-1/2 bg-sky-500/50">
+                    <div className="md:w-1/2 bg-violet-50 flex justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>
@@ -113,7 +122,7 @@ export default function FlickrGallery() {
                 ) : (
                   <>
                     {/* Text first */}
-                    <div className="md:w-1/2 text-right">
+                    <div className="md:w-1/2 bg-emerald-100 flex justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>

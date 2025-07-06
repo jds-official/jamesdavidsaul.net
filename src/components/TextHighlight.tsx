@@ -11,8 +11,7 @@ export default function TextHighlight() {
     setActive(true); // defer animation until after hydration
   }, []);
   const headline = `hey, it's jds`;
-  const sub = `I'm a photographer and web developer in the Hudson Valley, NY
-  and I've finally updated my website.`;
+  const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
     <div className="bg-sky-500/50 min-h-[100vh] p-10 flex flex-col justify-center items-center">
       <h2 className="text-4xl font-bold whitespace-nowrap">
