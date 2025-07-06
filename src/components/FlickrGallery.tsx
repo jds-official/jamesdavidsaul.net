@@ -108,7 +108,7 @@ export default function FlickrGallery() {
                       <Image
                         className="aspect-square object-cover"
                         src={photo.url}
-                        alt={photo.title}
+                        alt={photo.title + '–' + photo.description}
                         width={1920}
                         height={1920}
                       />
@@ -131,7 +131,7 @@ export default function FlickrGallery() {
                       <Image
                         className="aspect-square object-cover"
                         src={photo.url}
-                        alt={photo.title}
+                        alt={photo.title + '–' + photo.description}
                         width={1920}
                         height={1920}
                       />

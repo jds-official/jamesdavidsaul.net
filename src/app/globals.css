@@ -82,7 +82,7 @@ h3 {
   }
 
   .animate-bounceLeft {
-    animation: bounceLeft 2s ease-out 1.8s forwards;
+    animation: bounceLeft 2s ease-out forwards;
   }
 
   .animate-fade-in {
@@ -94,6 +94,6 @@ h3 {
   }
 
   .animate-revealUp {
-    animation: revealUp 2s ease-out 1.2s forwards;
+    animation: revealUp 2s ease-out forwards;
   }
 }

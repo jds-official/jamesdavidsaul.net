@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Roboto, Bad_Script } from 'next/font/google';
-// import { ScrollProvider } from '@/context/ScrollContext';
 import './globals.css';
 
 const roboto = Roboto({

@@ -1,10 +1,9 @@
 // src/components/TextHighlight.tsx
 'use client';
 import { useEffect, useState } from 'react';
-// import { useScroll } from '@/context/ScrollContext';
+import Image from 'next/image';
 
 export default function TextHighlight() {
-  // const { scroll } = useScroll();
   const [active, setActive] = useState(false);
 
   useEffect(() => {
@@ -13,7 +12,17 @@ export default function TextHighlight() {
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
-    <div className="bg-sky-500/50 min-h-[100vh] p-10 flex flex-col justify-center items-center">
+    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] p-10 flex flex-col justify-center items-center font-sans relative">
+      <div className="relative overflow-hidden transition-all -top-5">
+        <Image
+          className="animate-revealUp translate-y-full"
+          style={{ animationDelay: '2.5s' }}
+          src="/images/jds.webp"
+          alt="Selfie of James David Saul"
+          width={200}
+          height={300}
+        />
+      </div>
       <h2 className="text-4xl font-bold whitespace-nowrap">
         {headline.split('').map((char, i) => (
           <span
@@ -28,7 +37,10 @@ export default function TextHighlight() {
         ))}{' '}
       </h2>
       <div className="relative overflow-hidden">
-        <h3 className="inline-block animate-revealUp translate-y-full">
+        <h3
+          className="inline-block animate-revealUp translate-y-full"
+          style={{ animationDelay: '1.2s' }}
+        >
           {sub}
         </h3>
       </div>
