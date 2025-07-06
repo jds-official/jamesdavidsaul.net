@@ -16,6 +16,7 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!containerRef.current || typeof window === 'undefined') return;
+    let scrollInstance: LocomotiveScroll;
     const initScroll = async () => {
       const LocomotiveScroll = (await import('locomotive-scroll')).default;
 
@@ -29,7 +30,7 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
     initScroll();
 
     return () => {
-      scrollInstance.destroy();
+      if (scrollInstance) scrollInstance.destroy();
     };
   }, []);
 

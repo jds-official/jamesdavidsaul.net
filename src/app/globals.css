@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -10,6 +10,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-roboto);
   --font-mono: var(--font-geist-mono);
+  --font-script: var(--font-bad-script);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +26,10 @@ body {
   font-family: var(--font-sans);
 }
 
+h3 {
+  font-size: 24px;
+}
+
 @layer utilities {
   @keyframes fade-in {
     from {
@@ -37,7 +42,58 @@ body {
     }
   }
 
+  @keyframes reveal {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes bounceLeft {
+    0% {
+      transform: translateX(0);
+    }
+    20% {
+      transform: translateX(-20px);
+    }
+    40% {
+      transform: translateX(0);
+    }
+    60% {
+      transform: translateX(-10px);
+    }
+    80% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(0); /* Smooth return to original */
+    }
+  }
+
+  @keyframes revealUp {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+
+  .animate-bounceLeft {
+    animation: bounceLeft 2s ease-out 1.8s forwards;
+  }
+
   .animate-fade-in {
     animation: fade-in 0.8s ease-out forwards;
+  }
+
+  .animate-reveal {
+    animation: reveal 0.4s ease-in forwards;
+  }
+
+  .animate-revealUp {
+    animation: revealUp 2s ease-out 1.2s forwards;
   }
 }

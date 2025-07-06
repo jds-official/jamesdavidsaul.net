@@ -1,11 +1,17 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
-import { ScrollProvider } from '@/context/ScrollContext';
+import { Roboto, Bad_Script } from 'next/font/google';
+// import { ScrollProvider } from '@/context/ScrollContext';
 import './globals.css';
 
 const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
+});
+
+const badScript = Bad_Script({
+  variable: '--font-bad-script',
+  subsets: ['latin'],
+  weight: '400', // Bad Script only supports 400
 });
 
 export const metadata: Metadata = {
@@ -20,8 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>
-        <ScrollProvider>{children}</ScrollProvider>
+      <body className={`${roboto.variable} ${badScript.variable} antialiased`}>
+        {children}
       </body>
     </html>
   );

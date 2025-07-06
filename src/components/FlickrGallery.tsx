@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { H3 } from '@/components/Headings';
 
 // Define the interface we're going to use to store API data.
@@ -19,7 +18,6 @@ export default function FlickrGallery() {
   useEffect(() => {
     const fetchPhoto = async () => {
       try {
-        // First we pull the album.
         const photosetRes = await axios.get(
           'https://api.flickr.com/services/rest/',
           {
@@ -34,10 +32,8 @@ export default function FlickrGallery() {
           },
         );
 
-        // Now we can put our photo data together.
         const photos: FlickrPhoto[] = photosetRes.data.photoset.photo;
 
-        // We have to get the sizes of the photos so we can pull a higher res version.
         const results = await Promise.all(
           photos.map(async (photo: FlickrPhoto) => {
             const sizeRes = await axios.get(
@@ -52,13 +48,12 @@ export default function FlickrGallery() {
                 },
               },
             );
-            // Now we can get our sizes together and determine the largest one.
+
             const sizes: FlickrSize[] = sizeRes.data.sizes.size;
             const largest = sizes.reduce((prev, current) =>
               parseInt(current.width) > parseInt(prev.width) ? current : prev,
             );
 
-            // Get the description
             const infoRes = await axios.get(
               'https://api.flickr.com/services/rest/',
               {
@@ -73,7 +68,6 @@ export default function FlickrGallery() {
             );
             const description = infoRes.data.photo.description._content;
 
-            // Return structured data.
             return {
               id: photo.id,
               url: largest.source,
@@ -93,22 +87,48 @@ export default function FlickrGallery() {
 
   return (
     <div>
-      {photos ? (
+      {photos.length > 0 ? (
         <div>
-          {/* Loop over the photos and render the photo/title/description */}
           {photos.map((photo, i) => (
-            <div data-scroll-section key={i} className="flex justify-center">
-              <div className="w-3/4 mx-auto">
-                <Image
-                  className="aspect-1/1 object-cover"
-                  key={i}
-                  src={photo.url}
-                  alt={photo.title}
-                  width={1920}
-                  height={1920}
-                />
-                <H3>{photo.title}</H3>
-                <p>{photo.description}</p>
+            <div className="sticky top-0 min-h-screen" key={i}>
+              <div className="mx-auto flex flex-col md:flex-row">
+                {i % 2 === 0 ? (
+                  <>
+                    {/* Image first */}
+                    <div className="md:w-1/2">
+                      <Image
+                        className="aspect-square object-cover"
+                        src={photo.url}
+                        alt={photo.title}
+                        width={1920}
+                        height={1920}
+                      />
+                    </div>
+                    {/* Text second */}
+                    <div className="md:w-1/2 bg-sky-500/50">
+                      <H3>{photo.title}</H3>
+                      <p>{photo.description}</p>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Text first */}
+                    <div className="md:w-1/2 text-right">
+                      <H3>{photo.title}</H3>
+                      <p>{photo.description}</p>
+                    </div>
+                    {/* Image second */}
+                    <div className="md:w-1/2">
+                      <Image
+                        className="aspect-square object-cover"
+                        src={photo.url}
+                        alt={photo.title}
+                        width={1920}
+                        height={1920}
+                      />
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           ))}
