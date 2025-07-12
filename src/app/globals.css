@@ -86,7 +86,7 @@ h3 {
   }
 
   .animate-fade-in {
-    animation: fade-in 0.8s ease-out forwards;
+    animation: fade-in 1.2s ease-out forwards;
   }
 
   .animate-reveal {

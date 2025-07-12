@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import IntroNav from '@/components/IntroNav';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +32,7 @@ export default function TextHighlight() {
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-position-[center_top_-20vh]"
     >
       <div className="relative overflow-hidden transition-all">
         <Image
@@ -64,6 +65,7 @@ export default function TextHighlight() {
           {sub}
         </h3>
       </div>
+      <IntroNav />
     </div>
   );
 }
