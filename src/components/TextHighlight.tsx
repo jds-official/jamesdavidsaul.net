@@ -1,18 +1,38 @@
 // src/components/TextHighlight.tsx
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function TextHighlight() {
   const [active, setActive] = useState(false);
+  const mountainRef = useRef(null);
 
   useEffect(() => {
     setActive(true); // defer animation until after hydration
   }, []);
+
+  useGSAP(() => {
+    gsap.to(mountainRef.current, {
+      backgroundPositionY: '-200px',
+      scrollTrigger: {
+        trigger: mountainRef.current,
+        start: 'top top',
+        scrub: true,
+      },
+    });
+  });
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
-    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed">
+    <div
+      ref={mountainRef}
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
+    >
       <div className="relative overflow-hidden transition-all">
         <Image
           className="animate-revealUp translate-y-full w-[200px] h-[300px]"
