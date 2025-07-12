@@ -5,27 +5,61 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import IntroNav from '@/components/IntroNav';
+import ScrollArrow from '@/components/ScrollArrow';
+import GrandFormat from '@/components/GrandFormat';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function TextHighlight() {
   const [active, setActive] = useState(false);
   const mountainRef = useRef(null);
+  const fadeRef = useRef(null);
 
   useEffect(() => {
     setActive(true); // defer animation until after hydration
   }, []);
 
   useGSAP(() => {
-    gsap.to(mountainRef.current, {
-      backgroundPositionY: '-200px',
-      scrollTrigger: {
-        trigger: mountainRef.current,
-        start: 'top top',
-        scrub: true,
+    gsap.fromTo(
+      mountainRef.current,
+      { backgroundPositionY: '-10vh' },
+      {
+        backgroundPositionY: '-50vh',
+        scrollTrigger: {
+          trigger: mountainRef.current,
+          start: 'top top',
+          scrub: true,
+        },
       },
-    });
+    );
+    gsap.fromTo(
+      fadeRef.current,
+      {
+        yPercent: 120,
+        autoAlpha: 0,
+      },
+      {
+        yPercent: 0,
+        autoAlpha: 1,
+        duration: 2,
+        delay: 3.5,
+      },
+    );
+    gsap.fromTo(
+      fadeRef.current,
+      {
+        autoAlpha: 1,
+      },
+      {
+        autoAlpha: 0,
+        scrollTrigger: {
+          trigger: mountainRef.current,
+          start: 'top top',
+          end: '+300',
+          scrub: true,
+        },
+      },
+    );
   });
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
@@ -65,7 +99,19 @@ export default function TextHighlight() {
           {sub}
         </h3>
       </div>
-      <IntroNav />
+      <div
+        ref={fadeRef}
+        className="gsap-hidden relative mt-auto mb-4 w-full pl-2 pr-2 pb-8"
+        style={{ animationDelay: '3.1s' }}
+      >
+        <div
+          className="text-rose-50 grid grid-flow-row justify-items-center lg:grid-flow-col items-start lg:grid-cols-2 h-[200px]"
+          style={{ animationDelay: '3s' }}
+        >
+          <GrandFormat />
+          <ScrollArrow />
+        </div>
+      </div>
     </div>
   );
 }
