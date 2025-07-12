@@ -100,7 +100,7 @@ export default function FlickrGallery() {
         <div className="relative">
           {photos.map((photo, i) => (
             <div key={i}>
-              <div className="mx-auto flex flex-col lg:flex-row">
+              <div className="mx-auto flex flex-col lg:flex-row font-sans">
                 {i % 2 === 0 ? (
                   <>
                     {/* Image first */}
@@ -114,7 +114,7 @@ export default function FlickrGallery() {
                       />
                     </div>
                     {/* Text second */}
-                    <div className="lg:w-1/2 bg-violet-50 flex justify-center items-center flex-col">
+                    <div className="lg:w-1/2 bg-amber-100 flex justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>

@@ -1,18 +1,17 @@
 'use client';
-import ScrollArrow from '@/components/ScrollArrow';
-import GrandFormat from '@/components/GrandFormat';
 
 export default function Footer() {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
-    <div>
+    <div className="sticky bottom-0 left-0 -z-1">
       <footer
-        className="text-rose-50 absolute bottom-0 lg:-bottom-18 lg:grid lg:grid-cols-2 w-full animate-revealUp translate-y-full pl-4 pr-4"
-        style={{ animationDelay: '3s' }}
+        className="p-8 bg-rose-50 text-center font-sans"
         data-scroll
         data-scroll-speed="1"
       >
-        <GrandFormat />
-        <ScrollArrow />
+        <p>&copy; {year} James David Saul</p>
+        <p>Built using Next.js and Tailwind :)</p>
       </footer>
     </div>
   );

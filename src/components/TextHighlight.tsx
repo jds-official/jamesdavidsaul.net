@@ -12,7 +12,7 @@ export default function TextHighlight() {
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
-    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative">
+    <div className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed">
       <div className="relative overflow-hidden transition-all">
         <Image
           className="animate-revealUp translate-y-full w-[200px] h-[300px]"
