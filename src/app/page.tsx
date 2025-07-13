@@ -1,6 +1,6 @@
 'use client';
 import Header from '@/components/Header';
-import TextHighlight from '@/components/TextHighlight';
+import Intro from '@/components/Intro';
 import FlickrGallery from '@/components/FlickrGallery';
 import Footer from '@/components/Footer';
 
@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main>
       <Header />
-      <TextHighlight />
+      <Intro />
       <FlickrGallery />
       <Footer />
     </main>

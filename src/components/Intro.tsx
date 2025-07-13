@@ -1,4 +1,4 @@
-// src/components/TextHighlight.tsx
+// src/components/Intro.tsx
 'use client';
 import { useEffect, useState, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
