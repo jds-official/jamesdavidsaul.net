@@ -11,7 +11,7 @@ export default function Footer() {
         data-scroll-speed="1"
       >
         <p>&copy; {year} James David Saul</p>
-        <p>Built using Next.js and Tailwind :)</p>
+        <p>Built using Next.js, Tailwind, and GSAP</p>
       </footer>
     </div>
   );

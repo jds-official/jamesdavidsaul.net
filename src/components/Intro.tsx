@@ -35,7 +35,7 @@ export default function TextHighlight() {
     gsap.fromTo(
       fadeRef.current,
       {
-        yPercent: 120,
+        yPercent: 200,
         autoAlpha: 0,
       },
       {
@@ -70,7 +70,7 @@ export default function TextHighlight() {
     >
       <div className="relative overflow-hidden transition-all">
         <Image
-          className="animate-revealUp translate-y-full w-[200px] h-[300px]"
+          className="animate-revealUp translate-y-full w-[150px] md:w-[200px]"
           style={{ animationDelay: '2.5s' }}
           src="/images/jds.webp"
           alt="Selfie of James David Saul"
@@ -91,7 +91,7 @@ export default function TextHighlight() {
           </span>
         ))}{' '}
       </h2>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-hidden pl-2 pr-2">
         <h3
           className="inline-block animate-revealUp translate-y-full"
           style={{ animationDelay: '1.2s' }}
@@ -105,7 +105,7 @@ export default function TextHighlight() {
         style={{ animationDelay: '3.1s' }}
       >
         <div
-          className="text-rose-50 grid grid-flow-row justify-items-center lg:grid-flow-col items-start lg:grid-cols-2 h-[200px]"
+          className="text-rose-50 grid grid-flow-row justify-items-center md:grid-flow-col items-start md:grid-cols-2 h-[200px]"
           style={{ animationDelay: '3s' }}
         >
           <GrandFormat />
