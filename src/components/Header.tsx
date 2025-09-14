@@ -39,26 +39,26 @@ export default function Header() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <span className="sr-only">LinkedIn</span>
           <Image
             src="/icons/linkedin.svg"
             alt="LinkedIn icon"
             width={32}
             height={32}
           />
-          <span className="sr-only">LinkedIn</span>
         </a>
         <a
           href="https://www.tiktok.com/@jamesdavidsaul"
           target="_blank"
           rel="noopener noreferrer"
         >
+          <span className="sr-only">TikTok</span>
           <Image
             src="/icons/tiktok.svg"
             alt="TikTok icon"
             width={32}
             height={32}
           />
-          <span className="sr-only">TikTok</span>
         </a>
       </div>
     </div>

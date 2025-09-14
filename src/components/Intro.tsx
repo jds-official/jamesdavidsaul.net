@@ -1,6 +1,6 @@
 // src/components/Intro.tsx
 'use client';
-import { useEffect, useState, useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -11,18 +11,14 @@ import GrandFormat from '@/components/GrandFormat';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function TextHighlight() {
-  const [active, setActive] = useState(false);
   const mountainRef = useRef(null);
   const fadeRef = useRef(null);
-
-  useEffect(() => {
-    setActive(true); // defer animation until after hydration
-  }, []);
+  const typeRef = useRef(null);
 
   useGSAP(() => {
     gsap.fromTo(
       mountainRef.current,
-      { backgroundPositionY: '-10vh' },
+      { backgroundPositionY: '-30vh' },
       {
         backgroundPositionY: '-50vh',
         scrollTrigger: {
@@ -35,7 +31,7 @@ export default function TextHighlight() {
     gsap.fromTo(
       fadeRef.current,
       {
-        yPercent: 200,
+        yPercent: 250,
         autoAlpha: 0,
       },
       {
@@ -60,13 +56,24 @@ export default function TextHighlight() {
         },
       },
     );
+    gsap.fromTo(
+      typeRef.current,
+      {
+        width: '0',
+      },
+      {
+        width: '100%',
+        duration: 1.5,
+        ease: 'steps(16)',
+      },
+    );
   });
   const headline = `hey, it's jds`;
   const sub = `I'm a photographer and web developer in the Hudson Valley, NY.`;
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-position-[center_top_-20vh]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
     >
       <div className="relative overflow-hidden transition-all">
         <Image
@@ -79,17 +86,9 @@ export default function TextHighlight() {
         />
       </div>
       <h2 className="text-4xl font-bold whitespace-nowrap mt-4">
-        {headline.split('').map((char, i) => (
-          <span
-            key={i}
-            className={`inline-block transition-all duration-500 ${
-              active ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ transitionDelay: `${i * 100}ms` }}
-          >
-            {char === ' ' ? '\u00A0' : char}{' '}
-          </span>
-        ))}{' '}
+        <div ref={typeRef} className="relative overflow-hidden">
+          {headline}
+        </div>
       </h2>
       <div className="relative overflow-hidden pl-2 pr-2 text-center">
         <h3
@@ -101,15 +100,17 @@ export default function TextHighlight() {
       </div>
       <div
         ref={fadeRef}
-        className="gsap-hidden relative mt-4 md:mt-auto mb-4 w-full pl-2 pr-2 pb-8 md:overflow-hidden"
+        className="gsap-hidden relative mt-8 md:mt-auto mb-4 w-full pl-2 pr-2 pb-8 md:overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div
-          className="text-rose-50 grid grid-flow-row justify-items-center md:grid-flow-col items-start md:grid-cols-2 h-[200px]"
+          className="text-rose-50 h-[60vh] md:h-[200px] grid grid-flow-row md:grid-flow-col justify-items-center items-start"
           style={{ animationDelay: '3s' }}
         >
-          <GrandFormat />
-          <ScrollArrow />
+          <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:gap-0">
+            <GrandFormat />
+            <ScrollArrow />
+          </div>
         </div>
       </div>
     </div>
