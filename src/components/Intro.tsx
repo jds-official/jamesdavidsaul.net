@@ -91,9 +91,9 @@ export default function TextHighlight() {
           </span>
         ))}{' '}
       </h2>
-      <div className="relative overflow-hidden pl-2 pr-2">
+      <div className="relative overflow-hidden pl-2 pr-2 text-center">
         <h3
-          className="inline-block animate-revealUp translate-y-full"
+          className="inline-block animate-revealUp translate-y-full text-xl lg:text-2xl"
           style={{ animationDelay: '1.2s' }}
         >
           {sub}
@@ -101,7 +101,7 @@ export default function TextHighlight() {
       </div>
       <div
         ref={fadeRef}
-        className="gsap-hidden relative mt-auto mb-4 w-full pl-2 pr-2 pb-8"
+        className="gsap-hidden relative mt-4 md:mt-auto mb-4 w-full pl-2 pr-2 pb-8 md:overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div

@@ -5,7 +5,7 @@ export default function GrandFormat() {
     <div className="relative md:w-[350px] flex justify-center">
       <a href="https://vegandj.biz" target="_blank" rel="noopener noreferrer">
         <Image
-          className="w-[300px] m-[0_auto] md:w-full"
+          className="m-[0_auto] md:w-full"
           src="/images/grand-format.webp"
           alt="Grand Format Peanut Chews Logo"
           width={400}

@@ -4,13 +4,13 @@ export default function ScrollArrow() {
   return (
     <div className="flex">
       <h2
-        className="text-3xl lg:text-4xl font-script animate-bounceLeft text-nowrap relative left-[19%] lg:left-[18%]"
+        className="text-3xl lg:text-4xl font-script animate-bounceLeft text-nowrap relative left-[19%] lg:left-[18%] top-[2px]"
         style={{ animationDelay: '5s' }}
       >
         {stickyNavTxt}
       </h2>
       <svg
-        className="w-90 lg:w-100 relative -top-23 lg:-top-26"
+        className="w-90 lg:w-100 relative -top-22 lg:-top-25"
         viewBox="0 0 800 800"
       >
         <g
