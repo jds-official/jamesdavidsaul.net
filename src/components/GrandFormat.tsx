@@ -5,13 +5,7 @@ export default function GrandFormat() {
 `;
   return (
     <div className="relative w-80 flex justify-center">
-      <a
-        href="https://vegandj.biz"
-        target="_blank"
-        rel="noopener noreferrer"
-        role="button"
-        aria-label={linkText}
-      >
+      <a href="https://vegandj.biz" target="_blank" rel="noopener noreferrer">
         <Image
           className="m-[0_auto] md:w-full"
           src="/images/grand-format.webp"
