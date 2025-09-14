@@ -12,7 +12,7 @@ export default function GrandFormat() {
           height={200}
         />
         <p className="font-script font-bold text-2xl relative mt-4 leading-10">
-          Click for Grand Format, the vegan vinyl DJ in the Hudson Valley
+          I&apos;m also Grand Format, the vegan vinyl DJ in the Hudson Valley
         </p>
       </a>
     </div>
