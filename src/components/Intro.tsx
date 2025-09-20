@@ -31,7 +31,7 @@ export default function TextHighlight() {
     gsap.fromTo(
       fadeRef.current,
       {
-        yPercent: 250,
+        yPercent: 200,
         autoAlpha: 0,
       },
       {
@@ -99,15 +99,15 @@ export default function TextHighlight() {
         </h3>
       </div>
       <div
-        ref={fadeRef}
-        className="gsap-hidden w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 md:overflow-hidden"
+        className="w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div
-          className="text-rose-50 h-[60vh] md:h-[250px] grid"
+          ref={fadeRef}
+          className="gsap-hidden text-rose-50 h-[50vh] md:h-[250px] grid"
           style={{ animationDelay: '3s' }}
         >
-          <div className="relative md:grid md:grid-cols-2">
+          <div className="relative grid grid-rows-2 justify-center md:grid-cols-2">
             <GrandFormat />
             <ScrollArrow />
           </div>
