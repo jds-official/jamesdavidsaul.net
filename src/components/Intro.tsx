@@ -92,7 +92,7 @@ export default function TextHighlight() {
       </h2>
       <div className="relative overflow-hidden pl-2 pr-2 text-center">
         <h3
-          className="inline-block animate-revealUp translate-y-full text-xl lg:text-2xl"
+          className="inline-block animate-revealUp translate-y-full text-xl md:text-2xl"
           style={{ animationDelay: '1.2s' }}
         >
           {sub}
@@ -100,14 +100,14 @@ export default function TextHighlight() {
       </div>
       <div
         ref={fadeRef}
-        className="gsap-hidden relative mt-8 md:mt-auto mb-4 w-full pl-2 pr-2 pb-8 md:overflow-hidden"
+        className="gsap-hidden w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 md:overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div
-          className="text-rose-50 h-[60vh] md:h-[200px] grid grid-flow-row md:grid-flow-col justify-items-center items-start"
+          className="text-rose-50 h-[60vh] md:h-[250px] grid"
           style={{ animationDelay: '3s' }}
         >
-          <div className="grid grid-rows-2 gap-2 md:grid-cols-2 md:gap-0">
+          <div className="relative md:grid md:grid-cols-2">
             <GrandFormat />
             <ScrollArrow />
           </div>
