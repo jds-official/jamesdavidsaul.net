@@ -73,7 +73,7 @@ export default function TextHighlight() {
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-size-[265%] sm:bg-size-[100%]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-size-[265%] md:bg-size-[180%] lg:bg-size-[100%]"
     >
       <div className="hidden [@media(max-height:450px)]:block">
         <p className="text-xl relative -top-4">
