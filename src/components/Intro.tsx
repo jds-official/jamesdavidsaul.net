@@ -73,7 +73,7 @@ export default function TextHighlight() {
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
     >
       <div className="relative overflow-hidden transition-all">
         <Image
@@ -90,7 +90,7 @@ export default function TextHighlight() {
           {headline}
         </div>
       </h2>
-      <div className="relative overflow-hidden pl-2 pr-2 text-center">
+      <div className="relative overflow-hidden text-center">
         <h3
           className="inline-block animate-revealUp translate-y-full text-xl md:text-2xl"
           style={{ animationDelay: '1.2s' }}
@@ -99,7 +99,7 @@ export default function TextHighlight() {
         </h3>
       </div>
       <div
-        className="w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 overflow-hidden"
+        className="w-full sm:w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div
