@@ -114,7 +114,7 @@ export default function FlickrGallery() {
                       />
                     </div>
                     {/* Text second */}
-                    <div className="lg:w-1/2 bg-amber-100 flex justify-center items-center flex-col">
+                    <div className="pt-4 pb-4 lg:w-1/2 bg-amber-100 flex justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>
@@ -137,7 +137,7 @@ export default function FlickrGallery() {
                       />
                     </div>
                     {/* Text second mobile only */}
-                    <div className="flex lg:hidden lg:w-1/2 bg-emerald-100 justify-center items-center flex-col">
+                    <div className="flex pt-4 pb-4 lg:hidden lg:w-1/2 bg-emerald-100 justify-center items-center flex-col">
                       <H3>{photo.title}</H3>
                       <p>{photo.description}</p>
                     </div>

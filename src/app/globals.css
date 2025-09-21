@@ -62,7 +62,7 @@ body {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(0); /* Smooth return to original */
+      transform: translateX(0);
     }
   }
 

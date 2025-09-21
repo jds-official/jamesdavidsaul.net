@@ -18,9 +18,9 @@ export default function TextHighlight() {
   useGSAP(() => {
     gsap.fromTo(
       mountainRef.current,
-      { backgroundPositionY: '-30vh' },
+      { backgroundPositionY: '0' },
       {
-        backgroundPositionY: '-50vh',
+        backgroundPositionY: '-30vh',
         scrollTrigger: {
           trigger: mountainRef.current,
           start: 'top top',
@@ -73,8 +73,15 @@ export default function TextHighlight() {
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-size-[265%] sm:bg-size-[100%]"
     >
+      <div className="hidden [@media(max-height:450px)]:block">
+        <p className="text-xl relative -top-4">
+          Hi! FYI your viewport is quite horizontally-oriented at the moment.
+          Your results may vary if you do not turn your device or resize your
+          screen.
+        </p>
+      </div>
       <div className="relative overflow-hidden transition-all">
         <Image
           className="animate-revealUp translate-y-full w-[150px] md:w-[200px]"
