@@ -1,3 +1,9 @@
+# jamesdavidsaul.net
+
+This is the new jamesdavidsaul.net repo, finally built with NextJS, Tailwind, and GSAP.
+
+Boilerplate stuff below :)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
