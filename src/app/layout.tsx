@@ -17,7 +17,11 @@ const badScript = Bad_Script({
 
 export const metadata: Metadata = {
   title: 'jamesdavidsaul.net',
-  description: 'Web Developer, Photographer, Birder',
+  description:
+    'James David Saul is a web developer, photographer, and birder living in the Hudson Valley, NY',
+  openGraph: {
+    images: 'images/jds.png',
+  },
 };
 
 export default function RootLayout({
