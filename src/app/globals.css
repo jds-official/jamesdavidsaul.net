@@ -11,6 +11,7 @@
   --font-sans: var(--font-roboto);
   --font-mono: var(--font-geist-mono);
   --font-script: var(--font-bad-script);
+  --breakpoint-xs: 25rem;
 }
 
 @media (prefers-color-scheme: dark) {

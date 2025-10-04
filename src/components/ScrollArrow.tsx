@@ -2,14 +2,17 @@ export default function ScrollArrow() {
   const stickyNavTxt = `Scroll for photos`;
 
   return (
-    <div className="hidden md:flex absolute right-0 top-10 w-[370px]">
+    <div className="flex absolute right-[28vw] xs:right-0 top-[55%] xs:top-[50%] md:top-10 xs:w-[300px] md:w-[370px]">
       <h2
-        className="text-3xl md:text-4xl font-script animate-bounceLeft text-nowrap"
+        className="text-2xl xs:text-3xl md:text-4xl font-script animate-bounceLeft text-nowrap"
         style={{ animationDelay: '5s' }}
       >
         {stickyNavTxt}
       </h2>
-      <svg className="w-60 absolute -top-19.5 right-0" viewBox="0 0 600 600">
+      <svg
+        className="absolute w-25 xs:w-40 md:w-60 top-[-26px] right-[-62px] xs:top-[-48px] xs:right-[20px] md:-top-19.5 md:right-0"
+        viewBox="0 0 600 600"
+      >
         <g
           strokeWidth="6"
           stroke="oklch(96.9% 0.015 12.422)"

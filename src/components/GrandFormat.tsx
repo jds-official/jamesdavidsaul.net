@@ -13,7 +13,7 @@ export default function GrandFormat() {
           width={400}
           height={200}
         />
-        <p className="font-script font-bold text-xl sm:text-2xl relative mt-4 leading-10">
+        <p className="font-script font-bold text-lg xs:text-2xl relative mt-2 xs:mt-4 xs:leading-10">
           {linkText}
         </p>
       </a>
