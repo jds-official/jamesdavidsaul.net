@@ -73,7 +73,7 @@ export default function TextHighlight() {
   return (
     <div
       ref={mountainRef}
-      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-size-[265%] md:bg-size-[180%] lg:bg-size-[100%]"
+      className="bg-[url(/images/catskills.webp)] min-h-[100vh] pt-18 xs:pt-25 pl-4 pr-4 flex flex-col items-center font-sans relative bg-fixed will-change-[background-position-y] bg-size-[265%] md:bg-size-[180%] lg:bg-size-[100%]"
     >
       <div className="hidden [@media(max-height:450px)]:block">
         <p className="text-xl relative -top-4">
@@ -84,7 +84,7 @@ export default function TextHighlight() {
       </div>
       <div className="relative overflow-hidden transition-all">
         <Image
-          className="animate-revealUp translate-y-full w-[150px] md:w-[200px]"
+          className="animate-revealUp translate-y-full w-[120px] xs:w-[150px] md:w-[200px]"
           style={{ animationDelay: '2.5s' }}
           src="/images/jds.webp"
           alt="Selfie of James David Saul"
@@ -92,21 +92,21 @@ export default function TextHighlight() {
           height={300}
         />
       </div>
-      <h2 className="text-4xl font-bold whitespace-nowrap mt-4">
+      <h2 className="text-2xl xs:text-4xl font-bold whitespace-nowrap mt-4">
         <div ref={typeRef} className="relative overflow-hidden">
           {headline}
         </div>
       </h2>
       <div className="relative overflow-hidden text-center">
         <h3
-          className="inline-block animate-revealUp translate-y-full text-xl md:text-2xl"
+          className="inline-block animate-revealUp translate-y-full text-md xs:text-xl md:text-2xl"
           style={{ animationDelay: '1.2s' }}
         >
           {sub}
         </h3>
       </div>
       <div
-        className="w-full sm:w-[92vw] lg:w-[80vw] relative mt-8 md:mt-auto mb-4 pb-8 overflow-hidden"
+        className="w-full sm:w-[92vw] lg:w-[80vw] relative mt-2 xs:mt-8 md:mt-auto mb-4 pb-8 overflow-hidden"
         style={{ animationDelay: '3.1s' }}
       >
         <div
