@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     'James David Saul is a web developer, photographer, and birder living in the Hudson Valley, NY',
   openGraph: {
-    images: 'images/jds.png',
+    images: 'images/jds.jpg',
   },
 };
 
