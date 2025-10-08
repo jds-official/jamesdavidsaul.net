@@ -27,6 +27,8 @@ export default function FlickrGallery() {
   useEffect(() => {
     const fetchPhoto = async () => {
       try {
+        const viewportWidth = window.innerWidth;
+
         const photosetRes = await axios.get(
           'https://api.flickr.com/services/rest/',
           {
@@ -59,9 +61,14 @@ export default function FlickrGallery() {
             );
 
             const sizes: FlickrSize[] = sizeRes.data.sizes.size;
-            const largest = sizes.reduce((prev, current) =>
-              parseInt(current.width) > parseInt(prev.width) ? current : prev,
+
+            const sorted = sizes.sort(
+              (a, b) => parseInt(a.width) - parseInt(b.width),
             );
+
+            const bestFit =
+              sorted.find((s) => parseInt(s.width) >= viewportWidth) ||
+              sorted[sorted.length - 1]; // fallback to largest
 
             const infoRes = await axios.get(
               'https://api.flickr.com/services/rest/',
@@ -79,12 +86,13 @@ export default function FlickrGallery() {
 
             return {
               id: photo.id,
-              url: largest.source,
+              url: bestFit.source,
               title: photo.title,
-              description: description,
+              description,
             };
           }),
         );
+
         setPhotos(results);
       } catch (error) {
         console.error('Error fetching flickr photo', error);
