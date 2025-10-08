@@ -10,5 +10,5 @@ export function H2({ children }: { children: React.ReactNode }) {
 }
 
 export function H3({ children }: { children: React.ReactNode }) {
-  return <h2 className="text-xl font-semibold">{children}</h2>;
+  return <h3 className="text-lg xs:text-xl font-semibold">{children}</h3>;
 }
