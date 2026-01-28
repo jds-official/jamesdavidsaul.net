@@ -47,19 +47,6 @@ export default function Header() {
             height={32}
           />
         </a>
-        <a
-          href="https://www.tiktok.com/@jamesdavidsaul"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="sr-only">TikTok</span>
-          <Image
-            src="/icons/tiktok.svg"
-            alt="TikTok icon"
-            width={32}
-            height={32}
-          />
-        </a>
       </div>
     </div>
   );
